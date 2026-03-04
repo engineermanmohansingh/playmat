@@ -60,7 +60,9 @@ test.only('Fourth playwright test - child window handlings',async ({browser}) =>
    const text = await newPage.locator('.red').textContent();
    console.log(text);
    const email = text.split("@")[1].split(" ")[0];
-   console.log(email);
+   // console.log(email);
    await page.locator('#username').type(email);
-
+   console.log("Text Content - " + await page.locator('#username').textContent());
+   console.log("Input value - " + await page.locator('#username').inputValue());
+   console.log("inner Text - " + await page.locator('#username').innerText());   
 });
